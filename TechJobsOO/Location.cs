@@ -23,6 +23,7 @@ namespace TechJobsOO
 
         public override int GetHashCode()
         {
+            Console.WriteLine("HELLO");
             return HashCode.Combine(Id);
         }
 
