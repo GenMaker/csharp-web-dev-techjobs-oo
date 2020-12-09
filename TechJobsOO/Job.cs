@@ -21,7 +21,7 @@ namespace TechJobsOO
 
         public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
-            Name = Name;
+            Name = name;
             EmployerName = employerName;
             EmployerLocation = employerLocation;
             JobType = jobType;
@@ -29,11 +29,7 @@ namespace TechJobsOO
 
         }
 
-
-
         // TODO: Generate Equals() and GetHashCode() methods.
-
-       
 
         public override bool Equals(object obj)
         {
@@ -46,10 +42,81 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
+        public override string ToString()
+        {
+            //---------------this doesn't work ----------------//
+            //if (Id == ' ')
+            //{
+            //    return ($" OOPS! This job does not seem to exist");
+            //}
+            //else
+            //{
 
+            //return ($"\nID: {Id} \nName: {Name} \nEmployer: {EmployerName} \nLocation: {EmployerLocation} \nPosition Type: {JobType} \nCore Competency: {JobCoreCompetency} \n");
+            //}
 
-        
+            string results = "";
 
+            results += "\nID: " + this.Id;
 
+            //add checks here
+            results += "\nName: ";
+
+            if (this.Name == "")
+            {
+                results += "Data not available.";
+            }
+            else
+            {
+                results += this.Name;
+            }
+
+            results += "\nEmployer: ";
+
+            if (this.EmployerName.Value == "")
+            {
+                results += "Data not available.";
+            }
+            else
+            {
+                results += this.EmployerName;
+            }
+
+            results += "\nLocation: ";
+
+            if (this.EmployerLocation.Value == "")
+            {
+                results += "Data not available.";
+            }
+            else
+            {
+                results += this.EmployerLocation;
+            }
+
+            results += "\nPosition Type: ";
+
+            if (this.JobType.Value == "")
+            {
+                results += "Data not available.";
+            }
+            else
+            {
+                results += this.JobType;
+            }
+
+            results += "\nCore Competency: ";
+
+            if (this.JobCoreCompetency.Value == "")
+            {
+                results += "Data not available.";
+            }
+            else
+            {
+                results += this.JobCoreCompetency;
+            }
+
+            results += "\n";
+            return results;
+        }
     }
 }
